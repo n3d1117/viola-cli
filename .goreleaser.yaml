@@ -1,0 +1,38 @@
+version: 2
+
+project_name: viola
+
+before:
+  hooks:
+    - go test ./...
+
+builds:
+  - id: viola
+    main: ./cmd/viola
+    binary: viola
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - id: viola
+    ids:
+      - viola
+    formats:
+      - tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  use: git
+
+release:
+  draft: false
+  prerelease: auto
