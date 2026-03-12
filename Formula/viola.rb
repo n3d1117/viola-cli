@@ -1,10 +1,8 @@
 class Viola < Formula
   desc "CLI for reading FirenzeViola news"
   homepage "https://github.com/n3d1117/viola-cli"
-  url "https://github.com/n3d1117/viola-cli.git",
-      branch: "main",
-      using: :git
-  version "0.0.0"
+  url "https://github.com/n3d1117/viola-cli/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "c4c09eabfffef0efd1c591acbe4feadd6e572763506870729bfbf8ee0904554c"
   license "MIT"
   head "https://github.com/n3d1117/viola-cli.git", branch: "main"
 
